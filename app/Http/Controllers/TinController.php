@@ -8,6 +8,7 @@ use DB;
 class TinController extends Controller
 {
     function index() {
+        
         return view('index');
     }
 

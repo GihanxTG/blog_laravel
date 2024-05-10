@@ -13,5 +13,6 @@
         <a href="/chitiettin/{{$tin->id}}">{{$tin->tieuDe}} - ({{$tin->ngayDang}})</a><hr>
         
     @endforeach
+
 </body>
 </html>

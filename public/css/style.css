@@ -429,3 +429,13 @@
 
 
 
+/* add new */
+.td-2line {
+    display: inline-block;
+    width: 100%; /* Điều chỉnh kích thước của thẻ a tùy thuộc vào nhu cầu của bạn */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 3em; /* Chiều cao tối đa của 2 dòng */
+    line-height: 1.5em; /* Chiều cao của mỗi dòng */
+}

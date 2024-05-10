@@ -10,7 +10,7 @@
         <h1>Tin trong loại {{ $loaitin->ten }}:</h1>
 
         @foreach ($data as $tin)
-            <a href='{{ url("/chitiettin/{$tin->id}") }}'>
+            <a href='{{ url(/chitiettin/{$tin->id}") }}'>
                 <h3>{{$tin->tieuDe}}</h3>
             </a>
             <p>{{$tin->tomTat}}</p>

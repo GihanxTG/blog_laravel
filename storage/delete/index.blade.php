@@ -85,16 +85,20 @@
                         </button>
                         <div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
                             <div class="navbar-nav mx-auto border-top">
-                                <a href="index.html" class="nav-item nav-link active">Home</a>
-                                <a href="detail-page.html" class="nav-item nav-link">Detail  Page</a>
-                                <a href="404.html" class="nav-item nav-link">404 Page</a>
+                                <a href="index.html" class="nav-item nav-link active">Trang chủ</a>
                                 <div class="nav-item dropdown">
-                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dropdown</a>
-                                    <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                        <a href="#" class="dropdown-item">Dropdown 1</a>
-                                        <a href="#" class="dropdown-item">Dropdown 2</a>
-                                        <a href="#" class="dropdown-item">Dropdown 3</a>
-                                        <a href="#" class="dropdown-item">Dropdown 4</a>
+                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Danh mục</a>
+                                    <div class="dropdown-menu m-0 bg-secondary rounded-0" style="width: 300px;">
+                                        <div class="row">
+                                            @foreach ($theloai as $theloai)
+                                            <div class="col-6">
+                                                <a href="/loaitin/{{$theloai->id}}" class="dropdown-item">{{$theloai->ten}}</a>
+                                            </div>
+                                            @endforeach
+                                            <!-- <div class="col-6">
+                                                <a href="#" class="dropdown-item">Dropdown 1</a>
+                                            </div> -->
+                                        </div>
                                     </div>
                                 </div>
                                 <a href="contact.html" class="nav-item nav-link">Contact Us</a>
@@ -103,10 +107,10 @@
                                 <div class="d-flex">
                                     <img src="img/weather-icon.png" class="img-fluid w-100 me-2" alt="">
                                     <div class="d-flex align-items-center">
-                                        <strong class="fs-4 text-secondary">31°C</strong>
+                                        <strong class="fs-4 text-secondary">37°C</strong>
                                         <div class="d-flex flex-column ms-2" style="width: 150px;">
-                                            <span class="text-body">NEW YORK,</span>
-                                            <small>Mon. 10 jun 2024</small>
+                                            <span class="text-body">Hồ Chí Minh,</span>
+                                            <small>10 - Tháng 5 - 2024</small>
                                         </div>
                                     </div>
                                 </div>
@@ -151,18 +155,17 @@
                         <div class="position-relative overflow-hidden rounded">
                             <img src="img/news-1.jpg" class="img-fluid rounded img-zoomin w-100" alt="">
                             <div class="d-flex justify-content-center px-4 position-absolute flex-wrap" style="bottom: 10px; left: 0;">
-                                <a href="#" class="text-white me-3 link-hover"><i class="fa fa-clock"></i> 06 minute read</a>
-                                <a href="#" class="text-white me-3 link-hover"><i class="fa fa-eye"></i> 3.5k Views</a>
-                                <a href="#" class="text-white me-3 link-hover"><i class="fa fa-comment-dots"></i> 05 Comment</a>
-                                <a href="#" class="text-white link-hover"><i class="fa fa-arrow-up"></i> 1.5k Share</a>
+                                <a href="#" class="text-white me-3 link-hover"><i class="fa fa-eye"></i> {{$tinnoibat->xem}} Lượt xem</a>
+                                <a href="#" class="text-white me-3 link-hover"><i class="fas fa-calendar-alt me-1"></i> {{$tinnoibat->ngayDang}}</a>
+                                <!-- <a href="#" class="text-white me-3 link-hover"><i class="fa fa-comment-dots"></i> 05 Comment</a> -->
+                                <!-- <a href="#" class="text-white link-hover"><i class="fa fa-arrow-up"></i> 1.5k Share</a> -->
                             </div>
                         </div>
                         <div class="border-bottom py-3">
-                            <a href="#" class="display-4 text-dark mb-0 link-hover">Lorem Ipsum is simply dummy text of the printing</a>
+                            <a href="/detail/{{$tinnoibat->id}}" class="display-4 text-dark mb-0 link-hover">{{$tinnoibat->tieuDe}}</a>
                         </div>
-                        <p class="mt-3 mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley standard dummy text ever since the 1500s, when an unknown printer took a galley...
-                        </p>
-                        <div class="bg-light p-4 rounded">
+                        <p class="mt-3 mb-4">{{$tinnoibat->tomTat}}</p>
+                        <!-- <div class="bg-light p-4 rounded">
                             <div class="news-2">
                                 <h3 class="mb-4">Top Story</h3>
                             </div>
@@ -180,39 +183,22 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="col-lg-5 col-xl-4">
                        <div class="bg-light rounded p-4 pt-0">
                             <div class="row g-4">
-                                <div class="col-12">
+                                <!-- <div class="col-12">
                                     <div class="rounded overflow-hidden">
                                         <img src="img/news-3.jpg" class="img-fluid rounded img-zoomin w-100" alt="">
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="col-12">
                                     <div class="d-flex flex-column">
-                                        <a href="#" class="h4 mb-2">Get the best speak market, news.</a>
-                                        <p class="fs-5 mb-0"><i class="fa fa-clock"> 06 minute read</i> </p>
-                                        <p class="fs-5 mb-0"><i class="fa fa-eye"> 3.5k Views</i></p>
+                                        <p class="h4 mb-2 text-center">BXH LƯỢT XEM</p>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="row g-4 align-items-center">
-                                        <div class="col-5">
-                                            <div class="overflow-hidden rounded">
-                                                <img src="img/news-3.jpg" class="img-zoomin img-fluid rounded w-100" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-7">
-                                            <div class="features-content d-flex flex-column">
-                                                <a href="#" class="h6">Get the best speak market, news.</a>
-                                                <small><i class="fa fa-clock"> 06 minute read</i> </small>
-                                                <small><i class="fa fa-eye"> 3.5k Views</i></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @foreach ($xemnhieu as $xemnhieu)
                                 <div class="col-12">
                                     <div class="row g-4 align-items-center">
                                         <div class="col-5">
@@ -222,77 +208,14 @@
                                         </div>
                                         <div class="col-7">
                                             <div class="features-content d-flex flex-column">
-                                                <a href="#" class="h6">Get the best speak market, news.</a>
-                                                <small><i class="fa fa-clock"> 06 minute read</i> </small>
-                                                <small><i class="fa fa-eye"> 3.5k Views</i></small>
+                                                <a href="/detail/{{$xemnhieu->id}}" class="h6">{{$xemnhieu->tieuDe}}</a>
+                                                <small><i class="fas fa-calendar-alt me-1"> {{$xemnhieu->ngayDang}}</i> </small>
+                                                <small><i class="fa fa-eye"> {{$xemnhieu->xem}} Lượt xem</i></small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="row g-4 align-items-center">
-                                        <div class="col-5">
-                                            <div class="overflow-hidden rounded">
-                                                <img src="img/news-5.jpg" class="img-zoomin img-fluid rounded w-100" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-7">
-                                            <div class="features-content d-flex flex-column">
-                                                <a href="#" class="h6">Get the best speak market, news.</a>
-                                                <small><i class="fa fa-clock"> 06 minute read</i> </small>
-                                                <small><i class="fa fa-eye"> 3.5k Views</i></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row g-4 align-items-center">
-                                        <div class="col-5">
-                                            <div class="overflow-hidden rounded">
-                                                <img src="img/news-6.jpg" class="img-zoomin img-fluid rounded w-100" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-7">
-                                            <div class="features-content d-flex flex-column">
-                                                <a href="#" class="h6">Get the best speak market, news.</a>
-                                                <small><i class="fa fa-clock"> 06 minute read</i> </small>
-                                                <small><i class="fa fa-eye"> 3.5k Views</i></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row g-4 align-items-center">
-                                        <div class="col-5">
-                                            <div class="overflow-hidden rounded">
-                                                <img src="img/news-7.jpg" class="img-zoomin img-fluid rounded w-100" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-7">
-                                            <div class="features-content d-flex flex-column">
-                                                <a href="#" class="h6">Get the best speak market, news.</a>
-                                                <small><i class="fa fa-clock"> 06 minute read</i> </small>
-                                                <small><i class="fa fa-eye"> 3.5k Views</i></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="row g-4 align-items-center">
-                                        <div class="col-5">
-                                            <div class="overflow-hidden rounded">
-                                                <img src="img/news-7.jpg" class="img-zoomin img-fluid rounded w-100" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-7">
-                                            <div class="features-content d-flex flex-column">
-                                                <a href="#" class="h6">Get the best speak market, news.</a>
-                                                <small><i class="fa fa-clock"> 06 minute read</i> </small>
-                                                <small><i class="fa fa-eye"> 3.5k Views</i></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
                        </div>
                     </div>
@@ -330,23 +253,25 @@
         <!-- Latest News Start -->
         <div class="container-fluid latest-news py-5">
             <div class="container py-5">
-                <h2 class="mb-4">Latest News</h2>
+                <h2 class="mb-4">Tin mới nhất</h2>
                 <div class="latest-news-carousel owl-carousel">
+                    @foreach ($tinmoi as $tinmoi)
                     <div class="latest-news-item">
                         <div class="bg-light rounded">
                             <div class="rounded-top overflow-hidden">
                                 <img src="img/news-7.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
                             </div>
                             <div class="d-flex flex-column p-4">
-                                <a href="#" class="h4">Lorem Ipsum is simply dummy text of...</a>
+                                <a href="/detail/{{$tinmoi->id}}" class="h4 td-2line">{{$tinmoi->tieuDe}}</a>
                                 <div class="d-flex justify-content-between">
-                                    <a href="#" class="small text-body link-hover">by Willum Skeem</a>
-                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i> Dec 9, 2024</small>
+                                    <a href="#" class="small text-body link-hover">By Han J</a>
+                                    <small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i>{{$tinmoi->ngayDang}}</small>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="latest-news-item">
+                    @endforeach
+                    <!-- <div class="latest-news-item">
                         <div class="bg-light rounded">
                             <div class="rounded-top overflow-hidden">
                                 <img src="img/news-6.jpg" class="img-zoomin img-fluid rounded-top w-100" alt="">
@@ -401,7 +326,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
