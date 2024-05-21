@@ -18,7 +18,7 @@
         <div class="row g-4 align-items-center my-4">
             <div class="col-md-3">
                 <div class="rounded overflow-hidden">
-                    <img src="/img/news-2.jpg" class="img-fluid rounded img-zoomin w-100" alt="">
+                    <img src="/{{$list_lt->urlHinh}}" class="img-fluid rounded img-zoomin w-100" alt="">
                 </div>
             </div>
             <div class="col-md-9">
@@ -30,8 +30,11 @@
             </div>
         </div>
         @endforeach
+        {{$list_lt->links()}}
     </div>
     @else
-        <p>Không tồn tại loại tin này</p>
+    <div class="bg-light p-4 rounded">
+        <h1 class="text-center">Không tồn tại loại tin này</h1>
+    </div>
     @endif
 @endsection

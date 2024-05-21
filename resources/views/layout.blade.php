@@ -24,6 +24,7 @@
 
         <!-- Customized Bootstrap Stylesheet -->
         <link href="/css/bootstrap.min.css" rel="stylesheet">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
         <!-- Template Stylesheet -->
         <link href="/css/style.css" rel="stylesheet">
